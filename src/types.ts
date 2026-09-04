@@ -1,4 +1,5 @@
 export type IntentType = 'learn' | 'earn';
+export type LegalDocType = 'privacy' | 'terms' | 'disclaimer';
 
 export interface CourseItem {
   id: string;

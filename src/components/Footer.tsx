@@ -1,17 +1,20 @@
 import React from 'react';
-import { Phone, Mail, Globe, Sparkles, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { Phone, Mail, Globe, Sparkles, ArrowRight, ShieldCheck, Heart, FileText, Scale, AlertTriangle } from 'lucide-react';
 import { SVLLogo } from './SVLLogo';
+import { LegalDocType } from '../types';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
   onOpenEnrollment: () => void;
   onOpenJobApply: () => void;
+  onOpenLegal: (doc: LegalDocType) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ 
   onNavigate, 
   onOpenEnrollment, 
-  onOpenJobApply 
+  onOpenJobApply,
+  onOpenLegal
 }) => {
   return (
     <footer className="bg-[#0F172A] text-slate-300 pt-16 pb-12 border-t border-slate-800">
@@ -99,6 +102,44 @@ export const Footer: React.FC<FooterProps> = ({
                 </button>
               </li>
             </ul>
+
+            <div className="pt-3 border-t border-slate-800/80">
+              <h5 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Legal & Policies
+              </h5>
+              <ul className="space-y-1.5 text-xs text-slate-400">
+                <li>
+                  <button
+                    id="footer-col-privacy"
+                    onClick={() => onOpenLegal('privacy')}
+                    className="hover:text-sky-400 transition-colors text-left flex items-center gap-1.5"
+                  >
+                    <ShieldCheck className="w-3.5 h-3.5 text-sky-500 shrink-0" />
+                    <span>Privacy Policy</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    id="footer-col-terms"
+                    onClick={() => onOpenLegal('terms')}
+                    className="hover:text-sky-400 transition-colors text-left flex items-center gap-1.5"
+                  >
+                    <Scale className="w-3.5 h-3.5 text-sky-500 shrink-0" />
+                    <span>Terms & Conditions</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    id="footer-col-disclaimer"
+                    onClick={() => onOpenLegal('disclaimer')}
+                    className="hover:text-sky-400 transition-colors text-left flex items-center gap-1.5"
+                  >
+                    <AlertTriangle className="w-3.5 h-3.5 text-sky-500 shrink-0" />
+                    <span>Disclaimer</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Col 4: Programs & Opportunities */}
@@ -189,13 +230,42 @@ export const Footer: React.FC<FooterProps> = ({
 
         </div>
 
-        {/* Bottom copyright notice */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p id="copyright-notice">
-            © 2026 Smart View Labs. All Rights Reserved.
-          </p>
-          <div className="flex items-center gap-6">
+        {/* Bottom copyright notice & Legal Links */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p id="copyright-notice">
+              © 2026 Smart View Labs. All Rights Reserved.
+            </p>
+            <span className="hidden sm:inline text-slate-700">•</span>
+            <div className="flex items-center gap-3 font-medium">
+              <button
+                id="footer-bottom-privacy"
+                onClick={() => onOpenLegal('privacy')}
+                className="text-slate-400 hover:text-sky-400 transition-colors underline-offset-4 hover:underline"
+              >
+                Privacy Policy
+              </button>
+              <span className="text-slate-700">•</span>
+              <button
+                id="footer-bottom-terms"
+                onClick={() => onOpenLegal('terms')}
+                className="text-slate-400 hover:text-sky-400 transition-colors underline-offset-4 hover:underline"
+              >
+                Terms & Conditions
+              </button>
+              <span className="text-slate-700">•</span>
+              <button
+                id="footer-bottom-disclaimer"
+                onClick={() => onOpenLegal('disclaimer')}
+                className="text-slate-400 hover:text-sky-400 transition-colors underline-offset-4 hover:underline"
+              >
+                Disclaimer
+              </button>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
             <span>ISO Certified Training Architecture</span>
+            <span className="hidden sm:inline text-slate-700">•</span>
             <span>Made with Precision for Learners & Earners</span>
           </div>
         </div>

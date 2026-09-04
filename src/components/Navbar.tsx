@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, ArrowRight, Sparkles, GraduationCap, Briefcase } from 'lucide-react';
 import { SVLLogo } from './SVLLogo';
+import { LegalDocType } from '../types';
 
 interface NavbarProps {
   onSelectIntent: (intent: 'learn' | 'earn') => void;
+  onOpenLegal?: (doc: LegalDocType) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onSelectIntent }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onSelectIntent, onOpenLegal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -257,6 +259,43 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectIntent }) => {
                   Apply for Job
                 </button>
               </div>
+
+              {onOpenLegal && (
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-center gap-3 text-[11px] text-slate-500 font-medium">
+                  <button
+                    id="mobile-legal-privacy"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenLegal('privacy');
+                    }}
+                    className="hover:text-sky-600 transition-colors"
+                  >
+                    Privacy Policy
+                  </button>
+                  <span className="text-slate-300">•</span>
+                  <button
+                    id="mobile-legal-terms"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenLegal('terms');
+                    }}
+                    className="hover:text-sky-600 transition-colors"
+                  >
+                    Terms
+                  </button>
+                  <span className="text-slate-300">•</span>
+                  <button
+                    id="mobile-legal-disclaimer"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenLegal('disclaimer');
+                    }}
+                    className="hover:text-sky-600 transition-colors"
+                  >
+                    Disclaimer
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}
