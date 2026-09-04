@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCourses, onViewJobs }) => {
           {/* Super tag */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/90 border border-slate-200 rounded-full text-xs font-semibold text-[#0284C7] uppercase tracking-wider mb-5 shadow-xs backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-sky-500" />
-            <span>Govt. Registered & Practical Skill Development Institute</span>
+            <span>Practical Skill Development Institute</span>
           </div>
 
           {/* Primary High Conversion Headline */}
