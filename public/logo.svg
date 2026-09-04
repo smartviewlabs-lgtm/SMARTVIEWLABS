@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="100%" height="100%">
+  <defs>
+    <!-- Gradients matching the SVL Ribbon Logo -->
+    <!-- Top to Upper-Right: Pink / Magenta to Violet Indigo -->
+    <linearGradient id="svl-top-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48" />
+      <stop offset="50%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+
+    <!-- Right Side: Violet Indigo to Deep Blue -->
+    <linearGradient id="svl-right-grad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="50%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+
+    <!-- Bottom to Bottom-Right: Blue to Cyan Teal -->
+    <linearGradient id="svl-bottom-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#0D9488" />
+    </linearGradient>
+
+    <!-- Bottom-Left fold: Cyan Teal to Turquoise -->
+    <linearGradient id="svl-teal-fold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0EA5E9" />
+      <stop offset="60%" stop-color="#14B8A6" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
+    <!-- Left side: Amber Yellow to Orange -->
+    <linearGradient id="svl-left-grad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+
+    <!-- Upper-Left: Orange to Red-Pink -->
+    <linearGradient id="svl-upperleft-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="70%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Hexagon Ribbon Path Composition -->
+  <!-- Outer vertices: 
+       Top: (128, 12)
+       Top-Right: (228, 70)
+       Bottom-Right: (228, 186)
+       Bottom: (128, 244)
+       Bottom-Left: (28, 186)
+       Top-Left: (28, 70)
+  -->
+
+  <!-- Segment 1: Top-Right to Top (Pink to Indigo) -->
+  <polygon points="128,12 228,70 190,92 128,56 126,13" fill="url(#svl-top-grad)" />
+
+  <!-- Segment 2: Right Edge (Violet to Blue) -->
+  <polygon points="228,70 228,186 190,164 190,92" fill="url(#svl-right-grad)" />
+
+  <!-- Segment 3: Bottom-Right to Bottom (Blue to Cyan) -->
+  <polygon points="228,186 128,244 128,200 190,164" fill="url(#svl-bottom-grad)" />
+
+  <!-- Segment 4: Bottom-Left Teal / Cyan Fold -->
+  <polygon points="128,244 86,212 110,196 172,216" fill="url(#svl-teal-fold)" opacity="0.95" />
+  <polygon points="128,244 76,214 96,194 136,204" fill="#0D9488" />
+
+  <!-- Segment 5: Lower-Left to Left (Yellow to Orange) with sharp ribbon fold -->
+  <polygon points="28,186 112,198 90,164 66,164 28,186" fill="#EAB308" />
+  <polygon points="28,186 28,110 66,120 66,164" fill="url(#svl-left-grad)" />
+
+  <!-- Segment 6: Upper-Left (Orange to Red-Pink with white notch slit) -->
+  <polygon points="28,102 28,70 128,12 128,56 66,92" fill="url(#svl-upperleft-grad)" />
+
+  <!-- Subtle Ribbon notch slit on upper-left border -->
+  <polygon points="26,108 50,78 44,76 22,104" fill="#FFFFFF" opacity="0.95" />
+
+  <!-- Inner White Hexagon -->
+  <polygon points="128,56 190,92 190,164 128,200 66,164 66,92" fill="#FFFFFF" />
+
+  <!-- SVL Bold Brand Typography -->
+  <text 
+    x="128" 
+    y="148" 
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Montserrat', 'Poppins', 'Inter', sans-serif" 
+    font-weight="900" 
+    font-size="58" 
+    fill="#1E293B" 
+    letter-spacing="-1.5" 
+    text-anchor="middle"
+  >SVL</text>
+</svg>
